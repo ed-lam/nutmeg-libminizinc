@@ -124,6 +124,7 @@ include(cmake/targets/libminizinc_gurobi.cmake)
 include(cmake/targets/libminizinc_osicbc.cmake)
 include(cmake/targets/libminizinc_scip.cmake)
 include(cmake/targets/libminizinc_xpress.cmake)
+include(cmake/targets/libminizinc_nutmeg.cmake) # Nutmeg must appear after Geas and SCIP
 
 if(GECODE_FOUND AND USE_GECODE)
   target_link_libraries(mzn Gecode::Minimodel Gecode::Support)

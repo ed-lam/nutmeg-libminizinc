@@ -56,6 +56,9 @@ using namespace MiniZinc;
 #ifdef HAS_GEAS
 #include <minizinc/solvers/geas_solverfactory.hh>
 #endif
+#ifdef HAS_NUTMEG
+#include <minizinc/solvers/nutmeg_solverfactory.hh>
+#endif
 #ifdef HAS_SCIP
 #include <minizinc/solvers/MIP/MIP_scip_solverfactory.hh>
 #endif
@@ -84,6 +87,9 @@ SolverInitialiser::SolverInitialiser(void) {
   #endif
   #ifdef HAS_GEAS
   static Geas_SolverFactoryInitialiser _geas_init;
+  #endif
+  #ifdef HAS_NUTMEG
+  static Nutmeg_SolverFactoryInitialiser _nutmeg_init;
   #endif
   #ifdef HAS_SCIP
   static SCIP_SolverFactoryInitialiser _scip_init;

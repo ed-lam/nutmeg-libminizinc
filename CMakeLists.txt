@@ -20,6 +20,7 @@ option(USE_CPLEX "Enable the CPLEX solving target" TRUE)
 option(USE_GEAS "Enable the Geas solving target" TRUE)
 option(USE_GECODE "Enable the Gecode solving target" TRUE)
 option(USE_GUROBI "Enable the Gurobi solving target" TRUE)
+option(USE_NUTMEG "Enable the Nutmeg solving target" TRUE)
 option(USE_OSICBC "Enable the Osi CBC solving target" TRUE)
 option(USE_SCIP "Enable the SCIP solving target" TRUE)
 option(USE_XPRESS "Enable the Xpress solving target" TRUE)
@@ -55,6 +56,7 @@ find_package(Gurobi)
 find_package(OsiCBC)
 find_package(SCIP)
 find_package(Xpress)
+find_package(Nutmeg) # Nutmeg must appear after Geas and SCIP
 
 # Set build type when none is selected
 set(DEFAULT_BUILD_TYPE "Release")

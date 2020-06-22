@@ -37,6 +37,14 @@ if(TARGET minizinc_gecode)
   endif()
   set(CONF_DEPENDENCIES "${CONF_DEPENDENCIES}find_dependency(Gecode 6.0 COMPONENTS Driver Float Int Kernel Minimodel Search Set Support${_CONF_GIST})\n")
 endif()
+if(TARGET minizinc_nutmeg)
+  install(
+          FILES cmake/modules/FindNutmeg.cmake
+          DESTINATION ${REL_CMAKE_DIR}
+          COMPONENT dev
+  )
+  set(CONF_DEPENDENCIES "${CONF_DEPENDENCIES}find_dependency(Nutmeg)\n")
+endif()
 if(TARGET minizinc_osicbc)
   install(
     FILES cmake/modules/FindOsiCBC.cmake
